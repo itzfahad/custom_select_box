@@ -1,0 +1,157 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    border-radius: 5px;
+    font-family:'Roboto',sens-serif;
+}
+
+*:focus{
+    outline: none;
+}
+
+
+
+/* 
+.select_box_holder{
+  width: 200px;
+} */
+
+
+
+
+.custom-select-box {
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+.custom-select-box .options-container {
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 4px;
+  overflow: hidden;
+  order: 1;
+  position: absolute;
+  z-index: 100;
+}
+.custom-select-box .options-container.active {
+  max-height: 240px;
+  opacity: 1;
+  overflow-y: scroll;
+  margin-top: 4rem;
+}
+.custom-select-box .options-container.active ~ .search-box input {
+  opacity: 1;
+  pointer-events: auto;
+}
+.custom-select-box .options-container.active + .selected::after {
+  transform: rotate(270deg);
+}
+.custom-select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0 8px 8px 0;
+}
+.custom-select-box .options-container::-webkit-scrollbar-thumb {
+  border-radius: 0 8px 8px 0;
+}
+.custom-select-box label {
+  cursor: pointer;
+}
+.custom-select-box .option {
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.custom-select-box .option .radio {
+  display: none;
+}
+.custom-select-box .selected {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  position: relative;
+  padding: 0.5rem 3rem 0.5rem 2rem;
+  cursor: pointer;
+  order: 0;
+}
+.custom-select-box .selected::after {
+  content: "❯";
+  transform: rotate(90deg);
+  position: absolute;
+  right: 1rem;
+  top: 15%;
+  transition: all 0.4s;
+}
+.custom-select-box .search-box input {
+  width: 92%;
+  padding: 0.5rem 1.1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  border-radius: 8px 8px 0 0;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+.custom-select-box .search-box input:focus {
+  outline: none;
+}
+.custom-select-box .with-search.active {
+  margin-top: 6.2rem !important;
+}
+.custom-select-box .warning {
+  color: #f5f6fa;
+  background: #ea5455;
+}
+.custom-select-box .warning::-webkit-scrollbar {
+  width: 8px;
+  background: #aa1516 !important;
+}
+.custom-select-box .warning::-webkit-scrollbar-thumb {
+  background: #380707 !important;
+}
+.custom-select-box .warning .option:hover {
+  background: #c01819 !important;
+}
+.custom-select-box .warning input {
+  border: 8px solid #ea5455 !important;
+}
+.custom-select-box .success {
+  color: #f5f6fa;
+  background: #a8e27f;
+}
+.custom-select-box .success::-webkit-scrollbar {
+  width: 8px;
+  background: #65b82a !important;
+}
+.custom-select-box .success::-webkit-scrollbar-thumb {
+  background: #2c5012 !important;
+}
+.custom-select-box .success .option:hover {
+  background: #70cd2e !important;
+}
+.custom-select-box .success input {
+  border: 8px solid #a8e27f !important;
+}
+.custom-select-box .normal {
+  color: #f5f6fa;
+  background: #2f3640;
+}
+.custom-select-box .normal::-webkit-scrollbar {
+  width: 8px;
+  background: #000 !important;
+}
+.custom-select-box .normal::-webkit-scrollbar-thumb {
+  background: #000 !important;
+}
+.custom-select-box .normal .option:hover {
+  background: #040405 !important;
+}
+.custom-select-box .normal input {
+  border: 8px solid #2f3640 !important;
+}
